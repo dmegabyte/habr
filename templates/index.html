@@ -1,0 +1,15 @@
+<div>
+    {% for room in rooms %}
+    
+    <div>
+        <h3>
+            {{ room.name }}
+        </h3>
+        <p>
+            {{ room.created_at }}
+        </p>
+    </div>
+    <hr>
+    
+    {% endfor %}
+</div>
