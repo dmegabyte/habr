@@ -1,4 +1,8 @@
-<a href="{% url "create_room"  %}">CREATE ROOM</a>
+{% extends "menu/main.html" %}
+
+{% block content %}
+
+<a href="{% url "create_room"  %}">CREATE ROOM({{count_rooms}})</a>
 
 <div>
     {% for room in rooms %}
@@ -15,3 +19,9 @@
     
     {% endfor %}
 </div>
+
+
+
+{% endblock content %}
+
+
