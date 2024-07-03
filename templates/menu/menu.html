@@ -1,10 +1,22 @@
 
 <a href="">USERS</a>
 <a href="">TAGS</a>
-<a href="">REGISTRATION</a>
-<a href="">LOGIN</a>
-<a href="">EXIT</a>
+
 <a href="{% url "create_room"  %}">CREATE ROOM</a>
+
+<div>
+{% if request.user.is_authenticated %}
+<p>ДОБРО ПОЖАЛОВАТЬ,{{request.user.username}}</p>
+
+<a href="{% url "logout" %}">EXIT</a>
+{% else %}
+
+<a href="{% url "register" %}">REGISTRATION</a>
+<a href="{% url "login" %}">LOGIN</a>
+<p>ВХОД НЕ ВЫПОЛНЕН</p>
+{% endif %}
+</div>
+
 <style>
 menu{
     

@@ -2,10 +2,6 @@ from django.shortcuts import render,redirect
 from django.shortcuts import HttpResponse
 from main.models import Room
 from main.models import Comment
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from django.contrib.auth.hashers import make_password
-
 
 # Create your views here.
 
@@ -55,3 +51,12 @@ def create_room(request):
     return render(request, 'room/create_room.html')
 
 
+def login(request):
+    return render(request,"auth/login.html")
+
+def register(request):
+    return render(request,"auth/register.html")
+
+
+def logout(request):
+    return redirect("home")

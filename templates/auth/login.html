@@ -1,0 +1,12 @@
+{% extends "menu/main.html" %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username"placeholder="username"><br><br>
+    <input type="text" name="password" placeholder="password"><br>
+    <br>
+    <input type="submit" value="LOGIN">
+</form>
+<p>ХОТИТЕ ЗАРЕГИСТРИРОВАТЬСЯ? <a href="{% url "register" %}">РЕГИСТРАЦИЯ</a></p>
+
+{% endblock content %}
