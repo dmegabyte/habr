@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate,login,logout
 
 ALLOWED_SYMBOLS = 'abcdefghijklmnopqrstvwxyz0123456789_'
 
-def login_page(request):
+def login_page(request,**kwargs):
     if request.method == 'POST':
         username = request.POST.get('username').lower()
         password = request.POST.get('password')

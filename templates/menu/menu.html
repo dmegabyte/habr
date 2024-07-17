@@ -1,10 +1,12 @@
 
-<a href="">USERS</a>
-<a href="">TAGS</a>
+<div class="container-menu">
 
-<a href="{% url "create_room"  %}">CREATE ROOM</a>
+    <a href="">USERS</a>
+    <a href="">TAGS</a>
+    
+    <a href="{% url "create_room"  %}">CREATE ROOM</a>
 
-<div>
+
 {% if request.user.is_authenticated %}
 <p>ДОБРО ПОЖАЛОВАТЬ,{{request.user.username}}</p>
 
@@ -30,4 +32,10 @@ menu{
 
 }
 
+.container-menu{
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        padding: 0.5em 0;
+}
 </style>

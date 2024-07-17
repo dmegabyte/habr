@@ -1,5 +1,13 @@
 {% extends "menu/main.html" %}
 {% block content %}
+
+
+{% if error %}
+<div>{{ error }}</div>
+{% endif %}
+
+
+<div class="container-register">
 <form action="" method="POST">
     {% csrf_token %}
     <input type="text" name="username"placeholder="username"><br><br>
@@ -7,6 +15,7 @@
     <br>
     <input type="submit" value="LOGIN">
 </form>
-<p>ХОТИТЕ ЗАРЕГИСТРИРОВАТЬСЯ? <a href="{% url "register" %}">РЕГИСТРАЦИЯ</a></p>
 
+<p>ХОТИТЕ ЗАРЕГИСТРИРОВАТЬСЯ? <a href="{% url "register" %}">РЕГИСТРАЦИЯ</a></p>
+</div>
 {% endblock content %}

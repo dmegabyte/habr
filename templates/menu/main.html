@@ -7,16 +7,38 @@
     
 </head>
 <body>
+
+    
     {% include "menu/menu.html" %}
     {% include "menu/aside.html" %}
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        
+    </ul>
+
+
+    {% endif %}
+
 
     {% block content %}
     {% endblock content %}
 
-    
+    <style>
+        .messages{color:red;}
+        
+        .container-register {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+    </style>
     
     {% include "menu/footer.html" %} 
-    
 
 
 
